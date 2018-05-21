@@ -1,4 +1,16 @@
+class MyValidator < ActiveModel::Validator
+  def validate(post)
+    if post.title.include? 'True Facts'
+      post.errors[:title] << 'Must be clickbait'
+    end
+  end
+end
+ 
+
+
 class Post < ActiveRecord::Base
+  include ActiveModel::Validations
+  validates_with MyValidator
   validates :title, presence: true
   validates :content, length: { minimum: 150 }
  validates :summary, length: { minimum: 5 }
