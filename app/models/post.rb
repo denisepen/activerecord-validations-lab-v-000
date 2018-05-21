@@ -2,8 +2,10 @@ class MyValidator < ActiveModel::Validator
   def validate(post)
     if  post.title == nil
       post.errors[:title] << "Title can't be nil"
-    else post.title.starts_with? 'True'
+    elsif post.title.starts_with? 'True'
       post.errors[:title] << "Must be click bait"
+    else
+      post.errors[:title]
     end
   end
 end
