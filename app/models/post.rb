@@ -1,6 +1,6 @@
 class MyValidator < ActiveModel::Validator
   def validate(post)
-    if post.title.starts_with? 'True Facts'
+    if post.title.starts_with? 'True Facts' || post.title == nil
       post.errors[:title] << 'Must be clickbait'
     end
   end
@@ -10,7 +10,7 @@ end
 
 class Post < ActiveRecord::Base
   include ActiveModel::Validations
-
+   
   validates :title, presence: true
   validates :content, length: { minimum: 150 }
  validates :summary, length: { minimum: 5 }
