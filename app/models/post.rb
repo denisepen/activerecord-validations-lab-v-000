@@ -1,10 +1,10 @@
 class MyValidator < ActiveModel::Validator
   def validate(post)
-    if  post.title == "nil" || post.title.starts_with? 'True Facts'
+    if post.title.starts_with? 'True Facts' || post.title == nil
       post.errors[:title] << 'Error'
     end
   end
-
+end
 
 
 
