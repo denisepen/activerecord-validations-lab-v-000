@@ -1,6 +1,6 @@
 class MyValidator < ActiveModel::Validator
   def validate(post)
-    if post.title.starts_with 'True Facts'
+    if post.title.starts_with? 'True Facts'
       post.errors[:title] << 'Must be clickbait'
     end
   end
