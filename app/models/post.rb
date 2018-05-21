@@ -16,5 +16,5 @@ class Post < ActiveRecord::Base
  validates :summary, length: { minimum: 5 }
    validates :summary, length: { maximum: 150 }
    validates_exclusion_of :category, :in => ["Bowling Ball"]
-   validates :title, :acceptance true
+   
 end
