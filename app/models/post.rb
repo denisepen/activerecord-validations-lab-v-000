@@ -5,7 +5,7 @@ class MyValidator < ActiveModel::Validator
     end
   end
 end
- 
+
 
 
 class Post < ActiveRecord::Base
