@@ -4,7 +4,7 @@ class MyValidator < ActiveModel::Validator
       post.errors[:title] << 'Error'
     end
   end
-end
+
 
 
 
